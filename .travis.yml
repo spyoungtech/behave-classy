@@ -3,6 +3,12 @@ language: python
 
 python: "3.6"
 
+install:
+  - pip install .
+  - pip install pytest
+
+script:
+  - behave -f progress2
 
 deploy:
   provider: pypi
