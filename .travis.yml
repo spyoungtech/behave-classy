@@ -1,0 +1,20 @@
+sudo: false
+language: python
+
+python: "3.6"
+
+install:
+  - pip install .
+  - pip install pytest
+
+script:
+  - behave -f progress2
+
+deploy:
+  provider: pypi
+  user: "spyoungtech"
+  password:
+    secure: "jrUXPrfiofPcUJlAZggzZB1YNHAKNkixa9cmTAQ4yD0YIWHFP4xGcJn5yh3zwHtkQ21t7p95/5zl9Suy7yI/eYUBjEaCvP7jli38XEwQMOkkM32+8mVqoL+tzi/DByya2+gxxraK8uws8ivA1S+RHBGXChBFcJ7gwvZC3lxkNYDGZ2Uo6g/DN0C6095/tqxF1eTwLQOqLO+8BAdSSikgn+milWcGbwZqfnGrE/XMz2A8KHQhEGq+mY0hfdplLcxaIvgwmw0/hrFIq3CFaxVukTEzTFL2kXvkz+wDRUGHH89EHszqi6+bUnXq3JZLFnELvcgJFTBvggDj3QHLInW2GU0rVnQahsneXxAooQ3Xam4uzugaFYf0LjWz1WlUU1t1N/ZawF1GwXwHHZ7knJKFYLCcf3fRL43i+Bi+HVLu15bud3A43CFlqW6usU9YWQ5LW2PsvXfaYAMgFpruFedbfyn6R2Y5/wQvHwQYic//7Yx+m3PDNDBwyMLQInPRhObcUXnARO1g8uKo7JLbK0URh9rQHj6xJ5o6HAV8QQ72gcxC3nE8MfKWaF5Bc39KyNvlouPBr7aK/+J1X3mbXsgZxk+/zhw/+YjDw6As1iqkOwBrHJiC6c6SAiMhbN88wgHgym9l8dj1U7iuq2xYat27UT28BfcrY/94YXBAdGVz9F0="
+  on:
+    banch: master
+    tags: true
