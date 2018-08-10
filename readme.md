@@ -52,21 +52,21 @@ class BankAccountSteps(Base):
         self.context.balance = new_amount
 
 
-    @Base.given(u'I have a balance of {amount:float}')
+    @Base.given(u'I have a balance of {amount:d}')
     def set_balance(self, amount):
         self.balance = amount
     
-    @Base.when(u'I deposit {amount:float} into the account')
+    @Base.when(u'I deposit {amount:d} into the account')
     def deposit(self, amount):
         if amount < 0:
             raise ValueError('Deposit amounts cannot be negative')
         self.balance += amount
     
-    @Base.when(u'I withdraw {amount:float} from the account')
+    @Base.when(u'I withdraw {amount:d} from the account')
     def withdraw(self, amount):
         self.balance -= amount
     
-    @Base.then(u'the balance should be {expected_amount:float}')
+    @Base.then(u'the balance should be {expected_amount:d}')
     def check_balance(self, expected_amount):
         assert self.balance == expected_amount
 
