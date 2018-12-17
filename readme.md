@@ -40,18 +40,6 @@ from behave_classy import step_impl_base
 Base = step_impl_base()
 
 class BankAccountSteps(Base):
-    @property
-    def balance(self):
-        """convenience shortcut for context balance"""
-        amount = getattr(self.context, 'balance', 0)
-        return amount
-    
-    @balance.setter
-    def balance(self, new_amount):
-        """convenience setter"""
-        self.context.balance = new_amount
-
-
     @Base.given(u'I have a balance of {amount:d}')
     def set_balance(self, amount):
         self.balance = amount
@@ -69,6 +57,19 @@ class BankAccountSteps(Base):
     @Base.then(u'the balance should be {expected_amount:d}')
     def check_balance(self, expected_amount):
         assert self.balance == expected_amount
+
+    @property
+    def balance(self):
+        """convenience shortcut for context balance"""
+        amount = getattr(self.context, 'balance', 0)
+        return amount
+    
+    @balance.setter
+    def balance(self, new_amount):
+        """convenience setter"""
+        self.context.balance = new_amount
+
+
 
 ```
 
