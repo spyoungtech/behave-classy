@@ -1,5 +1,15 @@
 # behave-classy
 
+## Installation
+
+Installation is made easy with `pip`
+
+```
+pip install behave-classy
+```
+
+## What is behave-classy
+
 *beahve-classy* provides a class-based API for behave step implementations
 
 This package is geared towards authors of step implementation libraries and aims to provide a more flexible and 
@@ -12,13 +22,6 @@ The primary features
 - ability to define a matcher per-method without changing global state of the 'current matcher'
 - wraps methods to transform context into an attribute (`self.context`), so it's not necessary to have each method use context as first parameter in the signature. Works with default behave runner.
 
-# Installation
-
-Installation is made easy with `pip`
-
-```
-pip install behave-classy
-```
 
 # Usage
 
